@@ -14,7 +14,11 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
         {posts.map((post) => (
           <Link
             key={post.id}
-            href={post.slug === "selecting-an-accurate-blood-pressure-monitor" ? `/blog/${post.slug}` : "#"}
+            href={
+              ["selecting-an-accurate-blood-pressure-monitor", "sudden-cardiac-death-interview"].includes(post.slug)
+                ? `/blog/${post.slug}`
+                : "#"
+            }
             className="focus-ring flex gap-4 rounded-lg p-1 hover:bg-card transition-colors"
           >
             <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-md bg-card">
