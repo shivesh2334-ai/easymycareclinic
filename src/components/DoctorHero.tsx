@@ -1,4 +1,4 @@
-import { CalendarCheck, Clock3, MapPin, ShieldCheck } from "lucide-react";
+import { CalendarCheck, Clock3, MapPin, ShieldCheck, Star } from "lucide-react";
 import Image from "next/image";
 import type { Doctor } from "@/types/doctor";
 
@@ -61,7 +61,7 @@ export function DoctorHero({ doctor }: { doctor: Doctor }) {
           </span>
         )}
       </div>
-      <div className="grid border-t border-line bg-card/50 sm:grid-cols-3">
+      <div className="grid border-t border-line bg-card/50 sm:grid-cols-2 lg:grid-cols-4">
         <a
           href="https://maps.app.goo.gl/vAsXrFJDWKn27mSw7?g_st=ic"
           target="_blank"
@@ -72,7 +72,20 @@ export function DoctorHero({ doctor }: { doctor: Doctor }) {
           <MapPin className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">Dwarka, New Delhi</strong><span className="text-sage">View clinic on Google Maps</span></span>
         </a>
         <div className="flex items-center gap-3 border-t border-line px-6 py-4 sm:border-l sm:border-t-0"><Clock3 className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">6:00 PM – 9:00 PM</strong><span className="text-sage">Monday–Saturday · Closed Sunday</span></span></div>
-        <div className="flex items-center gap-3 border-t border-line px-6 py-4 sm:border-l sm:border-t-0"><ShieldCheck className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">18+ years</strong><span className="text-sage">Clinical experience</span></span></div>
+        <div className="flex items-center gap-3 border-t border-line px-6 py-4 lg:border-l lg:border-t-0"><ShieldCheck className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">18+ years</strong><span className="text-sage">Clinical experience</span></span></div>
+        <a
+          href="https://g.page/r/CRRVFQ-_ftGhEBE/review"
+          target="_blank"
+          rel="noreferrer"
+          className="focus-ring flex items-center gap-3 border-t border-line px-6 py-4 transition-colors hover:bg-card sm:border-l lg:border-t-0"
+          aria-label="Review Dr. Shivesh Kumar and Easy My Care Clinic on Google"
+        >
+          <Star className="text-rust" size={19} fill="currentColor" />
+          <span className="text-sm">
+            <strong className="block text-ink">Share your feedback</strong>
+            <span className="text-sage">Review us on Google</span>
+          </span>
+        </a>
       </div>
       </div>
     </section>
