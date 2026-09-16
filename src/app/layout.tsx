@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Dr. Shivesh Kumar | Physician & Cardiology Consultant",
   description:
-    "Consult Dr. Shivesh Kumar for preventive cardiology, echocardiography, hypertension, diabetes and general medicine at Easy My Care, Dwarka.",
+    "Dr. Shivesh Kumar is a physician, consultant cardiologist and healthcare AI innovator with more than 20 years of experience.",
 };
 
 export default function RootLayout({
