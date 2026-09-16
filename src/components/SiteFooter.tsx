@@ -4,6 +4,7 @@ import { ArrowUp } from "lucide-react";
 
 const QUICK_LINKS_LEFT = ["About us", "Leadership", "Careers", "Contact Us"];
 const QUICK_LINKS_RIGHT = ["Emergency 24x7", "Feedback", "Blogs"];
+const GOOGLE_REVIEW_URL = "https://g.page/r/CRRVFQ-_ftGhEBE/review";
 
 const SOCIALS: { label: string; href: string; path: string }[] = [
   {
@@ -42,7 +43,13 @@ export function SiteFooter({ clinicName }: { clinicName: string }) {
           </div>
           <div className="space-y-3">
             {QUICK_LINKS_RIGHT.map((l) => (
-              <a key={l} href="#" className="focus-ring block text-paper/85 hover:text-paper">
+              <a
+                key={l}
+                href={l === "Feedback" ? GOOGLE_REVIEW_URL : "#"}
+                target={l === "Feedback" ? "_blank" : undefined}
+                rel={l === "Feedback" ? "noreferrer" : undefined}
+                className="focus-ring block text-paper/85 hover:text-paper"
+              >
                 {l}
               </a>
             ))}
