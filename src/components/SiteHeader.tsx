@@ -4,17 +4,27 @@ import Image from "next/image";
 export function SiteHeader({ clinicName }: { clinicName: string }) {
   return (
     <header className="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
-        <a href="#profile" className="focus-ring flex items-center" aria-label={`${clinicName} home`}>
-          <span className="relative block h-12 w-36 overflow-hidden sm:h-14 sm:w-44">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3">
+        <a
+          href="#profile"
+          className="focus-ring flex min-w-0 items-center gap-2 sm:gap-3"
+          aria-label={`${clinicName} home`}
+        >
+          <span className="relative block h-10 w-32 shrink-0 sm:h-12 sm:w-[154px]">
             <Image
-              src="/emc-logo.png"
+              src="/emc-logo-header.png"
               alt="EMC — Easy My Care"
-              width={500}
-              height={500}
+              fill
               priority
-              className="absolute left-1/2 top-1/2 h-[230px] w-[230px] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain sm:h-[280px] sm:w-[280px]"
+              sizes="(min-width: 640px) 154px, 128px"
+              className="object-contain object-left"
             />
+          </span>
+          <span
+            className="-rotate-3 whitespace-nowrap text-[1.7rem] leading-none text-rust sm:text-[2.05rem]"
+            style={{ fontFamily: '"Brush Script MT", "Segoe Script", cursive' }}
+          >
+            Clinic
           </span>
         </a>
         <nav className="flex items-center gap-5 text-sm text-sage">
