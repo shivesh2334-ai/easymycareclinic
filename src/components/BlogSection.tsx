@@ -15,7 +15,7 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
           <Link
             key={post.id}
             href={
-              ["selecting-an-accurate-blood-pressure-monitor", "sudden-cardiac-death-interview"].includes(post.slug)
+              ["selecting-an-accurate-blood-pressure-monitor", "sudden-cardiac-death-interview", "demystifying-ai-for-clinicians"].includes(post.slug)
                 ? `/blog/${post.slug}`
                 : "#"
             }
