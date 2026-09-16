@@ -66,6 +66,15 @@ export const DEMO_PROFILE: DoctorProfileData = {
   ],
   posts: [
     {
+      id: "post-3",
+      slug: "sudden-cardiac-death-interview",
+      title: "Sudden Cardiac Death: An Expert Interview",
+      excerpt: "Listen to Dr. Shivesh Kumar discuss sudden cardiac death, warning signs, risk factors, prevention and timely response.",
+      cover_image_url: "/emc-logo.png",
+      tags: ["Audio Interview", "Cardiology", "Easy My Care"],
+      published_at: "2026-09-16T00:00:00.000Z",
+    },
+    {
       id: "post-1",
       slug: "selecting-an-accurate-blood-pressure-monitor",
       title: "Selecting an Accurate Blood Pressure Monitor for Home Use",
