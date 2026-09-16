@@ -62,8 +62,16 @@ export function DoctorHero({ doctor }: { doctor: Doctor }) {
         )}
       </div>
       <div className="grid border-t border-line bg-card/50 sm:grid-cols-3">
-        <div className="flex items-center gap-3 px-6 py-4"><MapPin className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">Dwarka, New Delhi</strong><span className="text-sage">Easy My Care Clinic</span></span></div>
-        <div className="flex items-center gap-3 border-t border-line px-6 py-4 sm:border-l sm:border-t-0"><Clock3 className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">Evening clinic</strong><span className="text-sage">5:30 PM – 9:00 PM</span></span></div>
+        <a
+          href="https://maps.app.goo.gl/vAsXrFJDWKn27mSw7?g_st=ic"
+          target="_blank"
+          rel="noreferrer"
+          className="focus-ring flex items-center gap-3 px-6 py-4 transition-colors hover:bg-card"
+          aria-label="Open Easy My Care Clinic location in Google Maps"
+        >
+          <MapPin className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">Dwarka, New Delhi</strong><span className="text-sage">View clinic on Google Maps</span></span>
+        </a>
+        <div className="flex items-center gap-3 border-t border-line px-6 py-4 sm:border-l sm:border-t-0"><Clock3 className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">6:00 PM – 9:00 PM</strong><span className="text-sage">Monday–Saturday · Closed Sunday</span></span></div>
         <div className="flex items-center gap-3 border-t border-line px-6 py-4 sm:border-l sm:border-t-0"><ShieldCheck className="text-pine" size={19}/><span className="text-sm"><strong className="block text-ink">18+ years</strong><span className="text-sage">Clinical experience</span></span></div>
       </div>
       </div>
