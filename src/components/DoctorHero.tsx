@@ -39,6 +39,9 @@ export function DoctorHero({ doctor }: { doctor: Doctor }) {
               {doctor.full_name}
             </h1>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/70 sm:text-base">{doctor.credentials}</p>
+            {doctor.bio && (
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/75">{doctor.bio}</p>
+            )}
           </div>
         </div>
         <a href="#booking" className="focus-ring flex h-fit items-center justify-center gap-2 rounded-xl bg-pine px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-pine-dark"><CalendarCheck size={18}/> Book appointment</a>
