@@ -8,6 +8,7 @@ import { CallbackCard } from "@/components/CallbackCard";
 import { BlogSection } from "@/components/BlogSection";
 import { BottomNavClient } from "@/components/BottomNavClient";
 import { ClinicFacilities } from "@/components/ClinicFacilities";
+import { DoctorTalk } from "@/components/DoctorTalk";
 
 // Change this to your doctor's slug once you've added them in Supabase.
 const DOCTOR_SLUG = process.env.NEXT_PUBLIC_DEFAULT_DOCTOR_SLUG ?? "demo";
@@ -33,6 +34,11 @@ export default async function Home() {
         <CallbackCard doctorId={doctor.id} email={doctor.email} />
 
         <BlogSection posts={posts} />
+
+        <DoctorTalk
+          title="Cardiology & Healthcare AI Videos"
+          videoUrl="https://www.youtube.com/embed/0rjk1itg6BY"
+        />
       </main>
 
       <SiteFooter clinicName={clinics[0]?.name ?? "Clinic"} />
