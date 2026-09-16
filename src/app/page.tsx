@@ -33,7 +33,7 @@ export default async function Home() {
 
         <CallbackCard doctorId={doctor.id} email={doctor.email} />
 
-        <BlogSection posts={posts} />
+        <div id="blogs"><BlogSection posts={posts} /></div>
 
         <DoctorTalk
           title="Cardiology & Healthcare AI Videos"
