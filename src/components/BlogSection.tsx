@@ -21,16 +21,14 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
             }
             className="focus-ring flex gap-4 rounded-lg p-1 hover:bg-card transition-colors"
           >
-            <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-md bg-card">
-              {post.cover_image_url && (
-                <Image
-                  src={post.cover_image_url}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="112px"
-                />
-              )}
+            <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-md border border-line bg-white">
+              <Image
+                src={post.cover_image_url ?? "/emc-logo.png"}
+                alt="Easy My Care"
+                fill
+                className="object-contain p-2"
+                sizes="112px"
+              />
             </div>
             <div className="min-w-0">
               <h3 className="font-serif text-base font-semibold leading-snug text-pine-dark">
