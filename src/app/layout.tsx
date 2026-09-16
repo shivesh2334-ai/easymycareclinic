@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -37,6 +38,7 @@ export default function RootLayout({
         className={`${sourceSerif.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-paper text-ink`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
