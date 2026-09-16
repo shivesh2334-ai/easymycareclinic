@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { BlogPost } from "@/types/doctor";
 
 export function BlogSection({ posts }: { posts: BlogPost[] }) {
@@ -11,8 +12,9 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
       </h2>
       <div className="space-y-5">
         {posts.map((post) => (
-          <article
+          <Link
             key={post.id}
+            href={post.slug === "selecting-an-accurate-blood-pressure-monitor" ? `/blog/${post.slug}` : "#"}
             className="focus-ring flex gap-4 rounded-lg p-1 hover:bg-card transition-colors"
           >
             <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-md bg-card">
@@ -35,7 +37,7 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
               )}
               {post.excerpt && <p className="mt-1 line-clamp-2 text-sm text-ink/65">{post.excerpt}</p>}
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>
