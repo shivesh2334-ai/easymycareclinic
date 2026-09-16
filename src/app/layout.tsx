@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Shivesh Kumar | Physician & Cardiology Consultant",
+  title: "Dr. Shivesh Kumar | Physician Consultant",
   description:
-    "Dr. Shivesh Kumar is a physician, consultant cardiologist and healthcare AI innovator with more than 20 years of experience.",
+    "Dr. Shivesh Kumar is a physician consultant and healthcare AI innovator with more than 20 years of experience.",
 };
 
 export default function RootLayout({
