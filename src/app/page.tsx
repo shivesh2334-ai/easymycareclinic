@@ -37,7 +37,7 @@ export default async function Home() {
 
         <DoctorTalk
           title="Cardiology & Healthcare AI Videos"
-          videoUrl="https://www.youtube.com/embed/0rjk1itg6BY"
+          videoUrl="https://www.youtube.com/embed/aFh2blPIfhA"
         />
       </main>
 
