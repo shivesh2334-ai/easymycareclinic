@@ -43,7 +43,7 @@ export default function SuddenCardiacDeathInterview() {
             <div><p className="text-xs uppercase tracking-wider text-paper/60">Interview podcast</p><h2 id="listen-heading" className="font-serif text-xl font-semibold">Listen to the full discussion</h2></div>
           </div>
           <audio className="mt-6 w-full" controls preload="metadata">
-            <source src="https://easy-my-care-doctor.drshivesh.chatgpt.site/sudden-cardiac-death-interview-optimized.mp3" type="audio/mpeg" />
+            <source src="/sudden-cardiac-death-interview-optimized.mp3" type="audio/mpeg" />
             Your browser does not support the audio player.
           </audio>
         </section>
