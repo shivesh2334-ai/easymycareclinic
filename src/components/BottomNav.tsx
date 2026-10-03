@@ -1,6 +1,7 @@
 "use client";
 
 import { Stethoscope, CalendarCheck, MessageCircle, Phone, Menu } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 interface BottomNavProps {
   whatsapp?: string | null;
@@ -16,8 +17,14 @@ export function BottomNav({ whatsapp, phone, onBookClick }: BottomNavProps) {
       icon: MessageCircle,
       label: "Chat",
       href: whatsapp ? `https://wa.me/${whatsapp}` : undefined,
+      onClick: () => trackEvent("whatsapp_click", { source: "bottom_nav" }),
     },
-    { icon: Phone, label: "Call Us", href: phone ? `tel:${phone}` : "tel:108" },
+    {
+      icon: Phone,
+      label: "Call Us",
+      href: phone ? `tel:${phone}` : "tel:108",
+      onClick: () => trackEvent("call_click", { source: "bottom_nav" }),
+    },
     { icon: Menu, label: "Menu", href: "#" },
   ];
 
@@ -40,6 +47,7 @@ export function BottomNav({ whatsapp, phone, onBookClick }: BottomNavProps) {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              onClick={onClick}
               className="focus-ring flex-1 text-center"
             >
               {content}
