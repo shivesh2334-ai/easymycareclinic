@@ -1,5 +1,8 @@
+"use client";
+
 import { Phone } from "lucide-react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 export function SiteHeader({ clinicName }: { clinicName: string }) {
   return (
@@ -31,6 +34,7 @@ export function SiteHeader({ clinicName }: { clinicName: string }) {
           <a
             href="tel:+919891368298"
             aria-label="Call Easy My Care"
+            onClick={() => trackEvent("call_click", { source: "header" })}
             className="focus-ring flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-pine"
           >
             <Phone size={15} strokeWidth={2} />
