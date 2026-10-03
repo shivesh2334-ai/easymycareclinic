@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-F72LT8QQ3Z";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -37,6 +40,17 @@ export default function RootLayout({
         className={`${sourceSerif.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-paper text-ink`}
       >
         {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}', { anonymize_ip: true });`}
+        </Script>
       </body>
     </html>
   );
