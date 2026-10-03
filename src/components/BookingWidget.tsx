@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import type { AppointmentSlot, Clinic } from "@/types/doctor";
+import { trackEvent } from "@/lib/analytics";
 
 interface BookingWidgetProps {
   doctorId: string;
@@ -97,6 +98,7 @@ export function BookingWidget({ doctorId, clinics, id }: BookingWidgetProps) {
       };
 
       setConfirmed(appointment);
+      trackEvent("booking_confirmed", { source: "booking_widget" });
 
       // Telegram is intentionally fire-and-forget: a notification failure must
       // never turn a successful appointment into a failed booking.
