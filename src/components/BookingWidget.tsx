@@ -90,10 +90,30 @@ export function BookingWidget({ doctorId, clinics, id }: BookingWidgetProps) {
     setError(null);
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
-      setConfirmed({
+      const appointment = {
         id: `EMC-${Date.now().toString(36).toUpperCase()}`,
         token_number: Math.floor(Math.random() * 20) + 1,
         patient_name: formData.name,
+      };
+
+      setConfirmed(appointment);
+
+      // Telegram is intentionally fire-and-forget: a notification failure must
+      // never turn a successful appointment into a failed booking.
+      void fetch("/api/telegram-confirmation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          patientName: formData.name,
+          patientPhone: formData.phone,
+          reason: formData.reason,
+          date: selectedDate,
+          time: selectedSlot.slot_time.slice(0, 5),
+          clinicName: clinics.find((c) => c.id === clinicId)?.name ?? "Easy My Care",
+          tokenNumber: appointment.token_number,
+        }),
+      }).catch((telegramError) => {
+        console.error("Telegram confirmation request failed:", telegramError);
       });
     } catch {
       setError("Could not complete the booking. Please try again.");
