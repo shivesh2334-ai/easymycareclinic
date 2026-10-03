@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, CheckCircle2 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export function CallbackCard({ email }: { doctorId: string; email?: string | null }) {
   const [name, setName] = useState("");
@@ -18,6 +19,7 @@ export function CallbackCard({ email }: { doctorId: string; email?: string | nul
     try {
       await new Promise((resolve) => setTimeout(resolve, 450));
       setDone(true);
+      trackEvent("callback_submitted", { source: "callback_card" });
     } catch {
       setError("Network error. Please try again.");
     } finally {
