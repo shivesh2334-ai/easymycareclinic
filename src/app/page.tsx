@@ -9,6 +9,7 @@ import { BlogSection } from "@/components/BlogSection";
 import { BottomNavClient } from "@/components/BottomNavClient";
 import { ClinicFacilities } from "@/components/ClinicFacilities";
 import { DoctorTalk } from "@/components/DoctorTalk";
+import { ClinicQRCodes } from "@/components/ClinicQRCodes";
 
 // Change this to your doctor's slug once you've added them in Supabase.
 const DOCTOR_SLUG = process.env.NEXT_PUBLIC_DEFAULT_DOCTOR_SLUG ?? "demo";
@@ -26,6 +27,7 @@ export default async function Home() {
         <DoctorHero doctor={doctor} />
         <ClinicFacilities />
         <BookingWidget doctorId={doctor.id} clinics={clinics} id="booking" />
+        <ClinicQRCodes />
         <div className="tear-divider mx-auto max-w-3xl" />
 
         <AboutDoctor name={doctor.full_name} experience={experience} education={education} />
